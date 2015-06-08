@@ -1,0 +1,31 @@
+/*------------------------------------*\
+    !-BREADCRUMB
+\*------------------------------------*/
+/**
+ * Simple breadcrumb styling to apply to (ordered) lists. 
+ *
+ */
+.breadcrumb > li + li:before
+  content:"» "
+
+/**
+ * For denoting a path-like structure with forward slash
+ */
+.breadcrumb-path > li + li:before
+  content:"/ "
+
+
+
+/**
+ * Assign a delimiter on the fly through a data attribute.
+ */
+.breadcrumb > li + li[data-breadcrumb]:before
+  content:attr(data-breadcrumb)" "
+
+
+
+/**
+ * Denote the root of the tree.
+ */
+.breadcrumb_root
+  font-weight:bold

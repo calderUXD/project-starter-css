@@ -1,0 +1,50 @@
+/*------------------------------------*\
+  !-HELPERS
+\*------------------------------------*/
+
+/**
+ * A set of helper classes to use sparingly and only if an element does not
+ * have these classes applied to base styles. If you need any of the objhects to float
+ * or any other helper please add it to the object versus the helper class in the markup
+ * ony use for edge or one off cases.
+ */
+
+.fr  
+  float:right
+
+.fl
+  float:left 
+
+.text-center,
+.text-centre
+  text-align:center
+
+/**
+ * Pull items full width of `.island` parents.
+ */
+
+.full-bleed
+  margin-right:-($base-spacing-unit)
+  margin-left: -($base-spacing-unit)
+  
+  .islet &
+    margin-right:-($half-spacing-unit)
+    margin-left: -($half-spacing-unit)
+
+/**
+ * Add a help cursor to items that have a help tooltip on hover.
+ */
+
+.help-item
+  cursor:help
+
+/**
+ * All caps formatting
+ */
+
+.caps
+  text-transform:uppercase
+
+/**
+ * TODO: h5bp classes to hide elements off the screen.
+ */

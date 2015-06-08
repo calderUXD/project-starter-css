@@ -1,0 +1,129 @@
+/*------------------------------------*\
+    !-MIXINS
+\*------------------------------------*/
+
+/*
+ * vertical rhythm function
+ */
+
+calc-font-size($font-size)
+  font-size:unit($font-size, px)
+  font-size:unit(($font-size / $base-font-size) * 1, rem)
+  //line-height:unit(($line-height-ratio / $base-font-size) , em)
+  line-height:unit(ceil($font-size / $base-line-height) * ($base-line-height / $font-size), em)
+
+/*
+ * Apply vertical rhythm bottom margin mixin @extend base-bottom-margin
+ */
+
+base-bottom-margin()
+  margin-bottom:$base-spacing-unit
+  margin-bottom:unit(($base-spacing-unit / $base-font-size) * 1, rem)
+
+/*
+ * vendor prefix mixins
+ */
+
+vendor(prop, args)
+  -webkit-{prop} args
+  -moz-{prop} args
+  -ms-{prop} args
+  -o-{prop} args
+  {prop} args
+
+vendor-inline(prop)
+  -webkit-{prop}
+  -moz-{prop}
+  -ms-{prop}
+  -o-{prop}
+
+vendor-alt(prop, args)
+  -webkit-{prop}(args)
+  -moz-{prop}(args)
+  -ms-{prop}(args)
+  -o-{prop}(args)
+  {prop}(args)
+
+/*
+ * CSS3 Mixins, name(value). i.e. border-radius(6px)
+ */
+
+text-columns()
+  vendor('column-count', arguments)
+
+text-gap()
+  vendor('column-gap', arguments)
+
+border-radius()
+  vendor('border-radius', arguments)
+
+shadow()
+  vendor('box-shadow', arguments)
+
+opacity()
+  vendor('opacity', arguments)
+
+/* TODO: FIX MIXIN
+//rotate(deg)
+  //vendor('transform', rotate(deg))
+*/
+
+border-radius()
+  vendor('border-radius', arguments)
+
+background-clip()
+  vendor('background-clip', arguments)
+ 
+text-fill-color()
+  vendor('text-fill-color', arguments) 
+ 
+transform()
+  vendor-alt('transform', arguments)
+
+transition-short()
+  vendor('transition', arguments)
+
+transition-property() 
+   vendor('transition-property', arguments)
+
+transition-duration()
+  vendor("transition-duration", arguments)
+
+transition-timing-function()
+  vendor("transition-timing-function", arguments)
+
+transition-delay()
+  vendor("transition-delay", arguments)
+
+
+/* Linear Gradient */
+
+bg-gradient(startPoint, startColor, startInterval, endColor, endInterval, deprecatedWebkitStartPoint = false, deprecatedWebkitEndPoint = false)
+  background-color startColor
+  if deprecatedWebkitStartPoint && deprecatedWebkitEndPoint
+    background-image -webkit-gradient(linear, deprecatedWebkitStartPoint, deprecatedWebkitEndPoint, color-stop(startInterval, startColor), color-stop(endInterval, endColor))
+  background-image -webkit-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -moz-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -ms-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image -o-linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+  background-image linear-gradient(startPoint, startColor startInterval, endColor endInterval)
+
+/* CSS ARROWS */
+
+txt-arrow($dir, $size, $color)
+  border: $size transparent solid
+
+  if ($dir == "top" or $dir == "up")
+    border-bottom-color: $color
+
+  else if ($dir == "right" or $dir == "after")
+    border-left-color: $color
+
+  else if ($dir == "bottom" or $dir == "down")
+    border-top-color: $color    
+
+  else if ($dir == "left" or $dir == "before")
+    border-right-color: $color
+      
+
+      
