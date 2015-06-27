@@ -1,0 +1,40 @@
+/*
+
+This is the main build file for the css library. Include in the below order.
+
+1. settings - Contains all the base settings for the project, variables, and globals for the project.
+
+2. tools -  Global mixins and functions
+
+3. resets - Low-specificity, far-reaching rulesets such as normalize etc.
+
+4. base -  Unclassed html element rules and styles
+
+5. objects - Abstracted generic classed objects such as lists, media objects, buttons, tables
+
+6. components - Complete chunks of HTML elements such as a nav component
+
+7. overrides - High-specificity, very explicit selectors. Overrides and helper classes such as (.hide)
+
+*/
+
+// 1. settings
+@import 'settings/_build'
+
+// 2. tools
+@import 'tools/_build'
+
+// 3. resets
+@import 'resets/_build'
+
+// 4. base
+@import 'base/_build'
+
+// 5. objects
+@import 'objects/_build'
+
+// 6. components
+@import 'components/_build'
+
+// 7. overrides
+@import 'overrides/overrides'

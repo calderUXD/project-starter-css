@@ -1,0 +1,100 @@
+/*------------------------------------*\
+    !-Responsive Grid
+\*------------------------------------*/
+
+//--> Row container block, use .block class on any grid row container.
+ * 
+ */
+
+.block
+	margin:0
+	list-style:none
+	@extend .cf
+
+.block .block
+	margin: 0px (-($gutterwidth))
+
+
+//-->  Global Column Class for the grid. Each column in the grid will need to be prefaced with class = "col"
+
+.col
+	float:left
+	padding:0 $gutterwidth
+
+
+//-->  Text alignment classes
+.col.text-right
+	text-align: right
+
+.col.text-left
+	text-align: left
+
+.col.text-center
+	text-align: center
+		
+
+if $border-box == false
+	.col
+		vendor(box-sizing, border-box)
+
+colWidth($colnumber)
+	width: unit((100 / ($totalcolumns / $colnumber)), '%')
+
+.block-rev
+	.col
+		float:right
+
+
+//--> Grid Classes for mobile and small devices.
+
+if $small-active
+
+	unquote("@media screen {")
+  
+	for grid in 1...($totalcolumns + 1)
+		.small-{grid}
+			colWidth(grid)
+
+	unquote("}")
+
+
+//--> Medium / tablet devices.
+
+if $medium-active
+
+	unquote("@media screen and (min-width: " + $medium-break + ") {")
+  
+	for grid in 1...($totalcolumns + 1)
+		.medium-{grid}
+			colWidth(grid)
+
+	unquote("}")
+	
+
+//--> Grid Classes for laptop and larger devices.
+
+if $large-active
+
+	unquote("@media screen and (min-width: " + $large-break + ") {")
+  
+	for grid in 1...($totalcolumns + 1)
+		.large-{grid}
+			colWidth(grid)
+
+	unquote("}")
+
+
+//--> Grid Classes for large desktop monitors and larger screens.
+
+if $xlarge-active
+
+	unquote("@media screen and (min-width: " + $xlarge-break + ") {")
+  
+	for grid in 1...($totalcolumns + 1)
+		.xlarge-{grid}
+			colWidth(grid)
+
+	unquote("}")
+
+
+

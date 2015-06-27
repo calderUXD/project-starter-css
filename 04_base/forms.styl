@@ -1,0 +1,56 @@
+/*------------------------------------*\
+    !-FORMS
+\*------------------------------------*/
+
+
+fieldset
+    padding:$base-spacing
+
+// --> Text Inputs
+
+.text-input, textarea
+    calc-font-size($base-font-size)
+    line-height:@line-height
+
+// --> Group sets of form fields in a list by adding field-group class.
+
+.form-group
+    list-style:none
+    margin:0
+
+    .form-fields > li
+        base-bottom-margin()
+    
+    .form-fields > li:last-child
+        margin-bottom:0
+        
+// --> form Labels
+    
+label, .label
+    display:block
+    calc-font-size($base-font-size)
+    
+ // --> form Checklists   
+
+.check-list
+    list-style:none
+    margin:0
+
+    .check-label, label, .label
+        display:inline-block
+        
+// --> Select Checkbox
+select
+  text-transform: capitalize
+
+// --> Input Help Class <small class=input-help>help text</small>
+.input-help
+    display:inline-block
+    visibility:hidden
+
+.text-input:active + .input-help,
+.text-input:focus + .input-help
+    visibility:visible
+    
+input[type=email]
+  text-transform: lowercase

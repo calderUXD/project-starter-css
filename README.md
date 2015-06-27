@@ -1,13 +1,25 @@
 # project-starter-css
-base css framework for project kickoff created with stylus.
+A base framework made with stylus to kick of a project. 
+
+## Contents
+
+Below is a list of contents. It is important to include in this order for specificity rules. Each section has a _build file to include.
 
 ```js
-'/core'  //contains base framework, unclassed elements, core object abasctractions.
+'/01_settings'  // Contains all the base settings for the project, variables, and globals for the project.
 
-'/theme'  //should contain project/app specific styles and objects.
+'/02_tools'  // Global mixins and functions
 
-'/theme/settings'  //project and theme defaults/variables
+'/03_resets'  // Low-specificity, far-reaching rulesets such as normalize etc.
 
-'/theme/build'  //the build file to output to final css doc for the project.
+'/04_base'  // Unclassed html element rules and styles
+
+'/05_objects'  // Abstracted generic classed objects such as lists, media objects, buttons, tables
+
+'/06_components'  // Complete chunks of HTML elements such as a nav component
+
+'/07_overrides'  // High-specificity, very explicit selectors. Overrides and helper classes such as (.hide)
 
 ```
+
+build.styl is the build file to set up the compiled style sheet.

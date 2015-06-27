@@ -1,0 +1,94 @@
+/*------------------------------------*\
+    !-NAV
+\*------------------------------------*/
+
+// --> Nav abstraction for horizontal list. Used for ol and ul elements.
+
+.nav
+    list-style:none
+    @extend .cf
+    margin-left:0
+    > li
+        &,
+        > a
+            display:inline-block
+            *display:inline
+            zoom:1
+      
+
+// --> Extend the .nav class and makes a stacked nav
+
+.nav-stacked
+    > li
+        display:list-item
+    > a
+        display:block
+        
+
+// --> Extend the .nav class and makes a centered nav
+.nav-banner
+    text-align:center
+  
+  
+// --> Extend the .nav class and gives navs blocky hit area
+.nav-block
+    line-height:1
+    letter-spacing:-0.31em
+    word-spacing:-0.43em
+    white-space:nowrap
+    
+    > li
+        letter-spacing:normal
+        word-spacing:normal
+        
+    > a
+        padding:unit($half-spacing, px)
+      
+
+// --> Extend the .nav to force a nav to occupy 100% of the available width of its parent.
+.nav-fit
+    display:table
+    width:100%
+    
+    > li
+        display:table-cell
+    > a
+        display:block
+      
+
+// --> extends nav and creates a list nav seperated by a comma ","       
+.nav-comma
+    > li
+        
+    &:after
+        content:",  "
+    
+    &:last-child:after
+        display:none
+
+// --> extends nav and creates a list nav seperated by a pipe "|"" 
+.nav-pipe
+    > li
+
+    &:after
+      content:" | "
+
+    &:last-child:after
+      display:none
+
+// --> extends nav and creates a list nav seperated by a forward slash "/"
+.nav-slash
+  > li
+      
+    &:after
+      content:" / "
+
+    &:last-child:after
+      display:none
+
+
+    
+    
+    
+        
+    

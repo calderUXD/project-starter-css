@@ -1,0 +1,49 @@
+/*------------------------------------*\
+    !-LISTS
+\*------------------------------------*/
+
+
+//--> Remove vertical spacing from nested lists.
+
+li
+    > ul,
+    > ol
+         margin-bottom:0
+     
+//--> numbered list without using OL
+.numbered-list
+    list-style-type:decimal
+    
+
+//--> basic grid like list
+
+.grid-list
+    @extend .cf
+    list-style:none
+    margin-left:0
+    
+    > li
+    	float:left
+        
+     
+ //--> how many columns in grid list  
+          
+.one-cols > li
+    width:100%
+
+.two-cols > li
+    width:50%
+
+.three-cols > li
+    width:33.333%
+
+.four-cols > li
+    width:25%
+
+.five-cols > li
+    width:20%
+
+.six-cols > li
+    width:16.66%
+
+
