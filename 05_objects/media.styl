@@ -1,13 +1,4 @@
-/*------------------------------------*\
-    !-MEDIA
-\*------------------------------------*/
-/**
- * Place any image- and text-like content side-by-side, as per:
- * stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
- * 
- * This is a generic nestable module for images and text combinations.
- *
- */
+//--> Media image
 
 .media
     display:block
@@ -17,9 +8,7 @@
         float:left
         margin-right:$base-spacing
     
-    /**
-     * Reversed image location (right instead of left).
-     */
+    // revearse image
     .media-img-rev
         float:right
         margin-left:$base-spacing
@@ -36,13 +25,4 @@
         .media-body,
         .media-body > :last-child
             margin-bottom:0
-
-    /**
-     * `.img`s in `.islet`s need an appropriately sized margin.
-     */
-    .islet .media-img
-        margin-right:$half-spacing
-    
-    .islet .media-img-rev
-        margin-left:$half-spacing
     

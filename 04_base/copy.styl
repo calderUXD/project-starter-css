@@ -1,17 +1,24 @@
-/*------------------------------------*\
-    !-QUOTES
-\*------------------------------------*/
+//--Base copy styles
+
+
+// Paragraph styles for Lead paragraph
+.lead,
+.lede
+    calc-font-size($base-font-size * 1.5)
+    line-height:@line-height * 1.25
+
+// Footnotes
+.footnote
+    calc-font-size($base-font-size / 1.5)
+    line-height:(@line-height / 1.25)
+    margin-top:unit(($base-spacing / $base-font-size) * -1, rem)
+
+//--> Quotes
 
 $open-quote = '“'
 $close-quote = '”'
 
-/**
- * reference - html5doctor.com/blockquote-q-cite
- */
 
-/**
- * Inline quotes.
- */
 q
     quotes:"‘" "’" $open-quote $close-quote
     &:before
@@ -46,9 +53,6 @@ blockquote
         content:close-quote
 
 blockquote
-    /**
-     * .4em is roughly equal to the width of the opening “ that we wish to hang.
-     */
     text-indent:-0.41em
     
     p:last-of-type
@@ -60,4 +64,3 @@ blockquote
     
     &:before
         content:"—"
-    

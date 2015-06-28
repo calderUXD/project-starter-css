@@ -1,25 +1,18 @@
 
-/*------------------------------------*\
-    !-CLEARFIX
-\*------------------------------------*/
-/**
- * Micro clearfix, as per: nicolasgallagher.com/micro-clearfix-hack
- * Extend the .cf class within your .styl style sheets to prevent the reuse of the "cf" over and over within the markup.
- *
- *   EXAMPLE: http://learnboost.github.com/stylus/docs/extend.html
- *
- *   .classname
- *      @extend .cf
+/* Clearfix
+
+.classname
+ 	@extend .cf
  */
 
 .cf
-  zoom:1
+	zoom:1
     
-  &:before,
-  &:after
-    content:" "
-    display:table
+	&:before,
+	&:after
+		content:" "
+		display:table
 
-  &:after
-    clear:both
+	&:after
+		clear:both
     

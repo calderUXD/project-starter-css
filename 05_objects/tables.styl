@@ -1,0 +1,24 @@
+// tables
+
+.table-bordered
+    th,td
+        border:1px solid #ccc /* Override this color in your theme stylesheet */
+        &:empty
+            border:none
+
+    thead tr:last-child th
+        border-bottom-width:2px
+
+    tbody tr th:last-of-type
+        border-right-width:2px
+
+// table-striped
+.table-striped
+
+    tbody tr:nth-of-type(odd)
+        background-color:#ffc /* Override this color in your theme stylesheet */
+    
+
+
+.table-data
+    font:12px/1.5 sans-serif
