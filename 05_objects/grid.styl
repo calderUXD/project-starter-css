@@ -1,17 +1,13 @@
-/*------------------------------------*\
-    !-Responsive Grid
-\*------------------------------------*/
+//--> Grid Object, make sure to pair the class="col" with the responsive widths built in the overrides/widths
 
 //--> Row container block, use .block class on any grid row container.
- * 
- */
 
-.block
+.grid
 	margin:0
 	list-style:none
 	@extend .cf
 
-.block .block
+.grid .grid
 	margin: 0px (-($gutterwidth))
 
 
@@ -21,7 +17,7 @@
 	float:left
 	padding:0 $gutterwidth
 
-.block-rev
+.grid-rev
 	.col
 		float:right
 
